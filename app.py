@@ -2,6 +2,9 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
+# Configuración de la aplicación
+APP_VERSION = "v3.0"
+
 # Configuramos el título de la aplicación Streamlit
 st.header("Analisis de anuncios de venta de coches")
 
@@ -48,6 +51,11 @@ if build_scatter:
 
     # Mostramos el gráfico de dispersión plotly interactivo en la aplicación Streamlit
     st.plotly_chart(fig, use_container_width=True)
+
+# Agregamos una línea horizontal para separar el contenido de la aplicación y un pie de página con la versión desplegada de la aplicación
+st.markdown("---")
+# Agregamos un pie de página con la versión desplegada de la aplicación
+st.caption(f"Versión desplegada: {APP_VERSION}")
 
 
 # ----- Este bloque de código se ha comentado para evitar que se ejecute la creación graficos atraves de botones en la aplicación Streamlit, pero se puede descomentar para mostrar los gráficos interactivos -----
