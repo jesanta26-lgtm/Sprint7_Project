@@ -8,13 +8,17 @@ st.header("Analisis de anuncios de venta de coches")
 # Cargamos el dataset de vehículos
 car_data = pd.read_csv('vehicles_us.csv')
 
+# Mostramos un texto introductorio para la sección de análisis exploratorio de datos
 st.write("En esta sección se muestra un análisis exploratorio de los datos de anuncios de venta de coches. Se pueden construir gráficos interactivos para visualizar la distribución del odómetro y la relación entre el odómetro y el precio de los vehículos.")
+
+# Creamos checkboxes para permitir al usuario elegir qué gráficos construir
 
 build_histogram = st.checkbox(
     'Construir el histograma de la distribución del odómetro')
 build_scatter = st.checkbox(
     'Construir el gráfico de dispersión para analizar la relación entre el odómetro y el precio')
 
+# Si el usuario selecciona la opción para construir el histograma, se crea y muestra el histograma de la distribución del odómetro utilizando Plotly
 if build_histogram:
 
     # Creamos un título para el histograma
@@ -31,6 +35,8 @@ if build_histogram:
     # use_container_width=True hace que el gráfico ocupe todo el ancho disponible en la aplicación
     st.plotly_chart(fig, use_container_width=True)
 
+
+# Si el usuario selecciona la opción para construir el gráfico de dispersión, se crea y muestra el gráfico de dispersión utilizando Plotly para analizar la relación entre el odómetro y el precio de los vehículos
 if build_scatter:
 
     # Creamos un título para el scatter plot
